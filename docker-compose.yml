@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  server3: # Use the image name from your Dockerfile
+    build:
+      context: .
+      dockerfile: Dockerfile1
+    image: server3
+    ports:
+      - "9000:80"
+    volumes:
+      - ./myweb/index.html:/usr/share/nginx/html/index.html
+  #
+  server4: # Use the image name from your Dockerfile
+    image: 66130662/ct519_test:latest
+    ports:
+      - "8000:80"
